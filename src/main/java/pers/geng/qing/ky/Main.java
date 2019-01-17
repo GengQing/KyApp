@@ -6,11 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.net.URL;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("kyApp.fxml"));
+        URL resource = getClass().getResource("/kyApp.fxml");
+        Parent root = FXMLLoader.load(resource);
         primaryStage.setTitle("Diligence");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
