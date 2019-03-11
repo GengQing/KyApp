@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.val;
 
-import java.net.URL;
-
 public class Main extends Application {
 
     @Override
