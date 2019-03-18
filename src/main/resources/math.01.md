@@ -206,16 +206,19 @@ $$\lim_{x \rightarrow x_0} f(x) =f(x_0)$$
 - 定理2(反函数的连续性) 如果函数在定义域内单调且连续, 那么其反函数,在对应定义域内  
     也单调且连续,并且单调性相同.
 
-- 定理3 复合函数极限
+- 定理3(复合函数外层函数连续) 设函数$y=f[g(x)]$是由函数$u=g(x),y=f(u)$复合而成,  
+    若$\lim_{x\rightarrow x_0} g(x) = u_0$,而函数$y=f(u) 在u=u_0$连续,则
+
+    $$\lim_{x\rightarrow x_0} f[g(x)]= f[\lim_{x\rightarrow x_0} g(x)] =f(u_0)$$
 
 $$
-如果 \lim_{x\rightarrow x_0} g(x) = u_0, f(x) 在x=u_0 连续, 那么 \\
+如果 \lim_{x\rightarrow x_0} g(x) = u_0且在x_0的某个领域内g(x)\neq u_0, f(x) 在x=u_0 连续, 那么 \\
 \lim_{x\rightarrow x_0} f[g(x)]= f[\lim_{x\rightarrow x_0} g(x)] =f(u_0)
 $$
 
-- 定理4(复合函数的连续性) 
-
-设$g(x) 在x_0 连续 g(x_0)=u_0, f(u)在u_0 连续,那么f[g(x)]在x_0$连续.
+- 定理4(复合函数的连续性条件) 
+设函数$y=f[g(x)]$是由函数$u=g(x),y=f(u)$复合而成,$g(x) 在x_0 连续 g(x_0)=u_0, f(u)在u_0  
+    连续,那么f[g(x)]在x_0$连续.
 
 - 一切初等函数在其定义域内连续
 
@@ -303,6 +306,25 @@ $$[f^{-1}(x)]'=\frac{1}{f'(y)} 或\frac {dy}{dx}=\frac {1} {\frac {dx}{dy}}$$
 则  
 
 $$\lim_{x\rightarrow a} \frac{f(x)}{F(x)} = \lim_{x\rightarrow a} \frac{f'(x)}{F'(x)}$$
+
+#### 泰勒定理
+
+- 泰勒中值定理1 如果函数$f(x)在x_0$处有$n$阶导数, 那么存在$x_0$的一个领域,对该领域内的任一个$x$有
+
+$$
+f(x)=f(x_0)+f'(x_0)(x-x_0)+ \frac{f''(x_0)}{2!}(x-x_0)^2+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
++o((x-x_0)^n)
+$$
+
+- 泰勒中值定理2 如果函数$f(x)在x_0$某领域$U(x_0)$ 处有$n+1$阶导数, 那么对任一$x \in U(x_0)$有
+
+$$
+f(x)=f(x_0)+f'(x_0)(x-x_0)+ \frac{f''(x_0)}{2!}(x-x_0)^2+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
++\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}, \xi \in (x,x_0).
+$$
+
+
+ 
 
 #### 函数单调性判定法
 

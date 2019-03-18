@@ -284,6 +284,10 @@ $$
 \int_a^{a+nT} f(x)dx = n\int_0^T f(x)dx
 $$
 
+## 变上限积分
+$$
+\int_0^x f(x-t)dt = \int_0^x f(t)dt
+$$
 
 ## 反常积分收敛
 
