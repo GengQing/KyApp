@@ -220,8 +220,6 @@ $$[u^v]'=u^v(u'\frac{v}{u}+v'\ln u)$$
 ## 高阶导数
 
 $$
-
-
 (uv)^{(n)}=\sum_{k=0}^n C_n^k u^{(n-k)} v^{(k)}\\
 
 (\sin x)^{(n)} = \sin (x +n\times\frac{\pi}{2})\\
