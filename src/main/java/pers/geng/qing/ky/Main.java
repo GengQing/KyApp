@@ -13,6 +13,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         val resource = getClass().getResource("/kyApp.fxml");
         Parent root = FXMLLoader.load(resource);
+
+
+
+
         primaryStage.setTitle("Diligence");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
