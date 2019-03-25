@@ -2,18 +2,19 @@ package pers.geng.qing.ky;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
 
     @FXML
-    private Button btn;
+    private Label label;
 
 
-    @FXML
-    private TextField showText;
 
     public void sendOK() {
-        showText.setText("hello world");
+
+        label.setText("你改变了状态");
+
     }
 }
