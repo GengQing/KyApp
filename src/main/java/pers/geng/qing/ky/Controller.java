@@ -15,7 +15,7 @@ public class Controller {
     public void showKnowledge() {
 
         label.setText("下一条知识");
-        canvas.drawFormula();
+        canvas.drawFormula("方程$f(x)$的解2: \\\\ $$x=\\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}$$", 40);
 
     }
 }

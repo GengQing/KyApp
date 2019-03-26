@@ -36,12 +36,11 @@ public class MathFormulaCanvas extends Canvas {
         heightProperty().addListener(evt -> draw());
     }
 
-    public void drawFormula() {
+    public void drawFormula(String math, int size) {
 
-        TeXFormula formula = new TeXFormula("方程$f(x)$的解2: \\\\ $$x=\\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}$$");
-
+        TeXFormula formula = new TeXFormula(math);
         // render the formula to an icon of the same size as the formula.
-        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 30);
+        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, size);
         draw();
 
 
@@ -58,9 +57,9 @@ public class MathFormulaCanvas extends Canvas {
         //this.icon.paintIcon(new JLabel(), fxGraphics2D, 50, 50);
 
         // now create an actual image of the rendered equation
-        BufferedImage image = new BufferedImage(icon.getIconWidth(),
-                icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics2D graphics2D = image.createGraphics();
+        BufferedImage bufferedImage = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(),
+                BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics2D = bufferedImage.createGraphics();
         graphics2D.setColor(Color.WHITE);
         graphics2D.fillRect(0, 0, icon.getIconWidth(), icon.getIconHeight());
         JLabel jLabel = new JLabel();
@@ -68,7 +67,7 @@ public class MathFormulaCanvas extends Canvas {
         icon.paintIcon(jLabel, graphics2D, 0, 0);
         // at this point the image is created, you could also save it with ImageIO
 
-        this.fxGraphics2D.drawImage(image, 0, 0, null);
+        this.fxGraphics2D.drawImage(bufferedImage, 0, 0, null);
     }
 
     @Override
