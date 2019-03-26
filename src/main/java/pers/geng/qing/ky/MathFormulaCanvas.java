@@ -28,12 +28,23 @@ public class MathFormulaCanvas extends Canvas {
         // create a formula
         TeXFormula formula = new TeXFormula("方程$f(x)$的解: \\\\ $$x=\\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}$$");
 
-        // render the formla to an icon of the same size as the formula.
-        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 15);
+        // render the formula to an icon of the same size as the formula.
+        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 30);
 
         // Redraw canvas when size changes.
         widthProperty().addListener(evt -> draw());
         heightProperty().addListener(evt -> draw());
+    }
+
+    public void drawFormula() {
+
+        TeXFormula formula = new TeXFormula("方程$f(x)$的解2: \\\\ $$x=\\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}$$");
+
+        // render the formula to an icon of the same size as the formula.
+        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 30);
+        draw();
+
+
     }
 
     public void draw() {
@@ -57,7 +68,7 @@ public class MathFormulaCanvas extends Canvas {
         icon.paintIcon(jLabel, graphics2D, 0, 0);
         // at this point the image is created, you could also save it with ImageIO
 
-        this.fxGraphics2D.drawImage(image, 100, 100, null);
+        this.fxGraphics2D.drawImage(image, 0, 0, null);
     }
 
     @Override
