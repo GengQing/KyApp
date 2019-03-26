@@ -39,10 +39,12 @@
         </dependency>
 
         <dependency>
-            <groupId>com.proudapes</groupId>
-            <artifactId>jlatexmathfx</artifactId>
-            <systemPath>${project.basedir}/libs/jlatexmathfx-0.3.3.jar</systemPath>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
+
 
 
     </dependencies>
