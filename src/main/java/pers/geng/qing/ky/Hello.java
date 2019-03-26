@@ -24,8 +24,8 @@ public class Hello extends Application {
         canvas.heightProperty().bind(stackPane.heightProperty());
         stage.setScene(new Scene(stackPane));
         stage.setTitle("FXGraphics2DDemo3.java");
-        stage.setWidth(700);
-        stage.setHeight(390);
+        stage.setWidth(100);
+        stage.setHeight(278);
         stage.show();
 
     }

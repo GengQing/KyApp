@@ -13,20 +13,23 @@ import java.awt.image.BufferedImage;
 /**
  * Created by Geng Qing on 2019-03-25
  **/
-class MathFormulaCanvas extends Canvas {
 
-    private FXGraphics2D g2;
+public class MathFormulaCanvas extends Canvas {
 
-    private TeXIcon icon;
+    public FXGraphics2D fxGraphics2D;
+
+    public TeXIcon icon;
+
 
     public MathFormulaCanvas() {
-        this.g2 = new FXGraphics2D(getGraphicsContext2D());
+        super();
+        this.fxGraphics2D = new FXGraphics2D(getGraphicsContext2D());
 
         // create a formula
         TeXFormula formula = new TeXFormula("方程$f(x)$的解: \\\\ $$x=\\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}$$");
 
         // render the formla to an icon of the same size as the formula.
-        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 20);
+        this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 15);
 
         // Redraw canvas when size changes.
         widthProperty().addListener(evt -> draw());
@@ -41,20 +44,20 @@ class MathFormulaCanvas extends Canvas {
         // ideally it should be possible to draw directly to the FXGraphics2D
         // instance without creating an image first...but this does not generate
         // good output
-        //this.icon.paintIcon(new JLabel(), g2, 50, 50);
+        //this.icon.paintIcon(new JLabel(), fxGraphics2D, 50, 50);
 
         // now create an actual image of the rendered equation
         BufferedImage image = new BufferedImage(icon.getIconWidth(),
                 icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics2D gg = image.createGraphics();
-        gg.setColor(Color.WHITE);
-        gg.fillRect(0, 0, icon.getIconWidth(), icon.getIconHeight());
-        JLabel jl = new JLabel();
-        jl.setForeground(new Color(0, 0, 0));
-        icon.paintIcon(jl, gg, 0, 0);
+        Graphics2D graphics2D = image.createGraphics();
+        graphics2D.setColor(Color.WHITE);
+        graphics2D.fillRect(0, 0, icon.getIconWidth(), icon.getIconHeight());
+        JLabel jLabel = new JLabel();
+        jLabel.setForeground(new Color(0, 0, 0));
+        icon.paintIcon(jLabel, graphics2D, 0, 0);
         // at this point the image is created, you could also save it with ImageIO
 
-        this.g2.drawImage(image, 0, 0, null);
+        this.fxGraphics2D.drawImage(image, 100, 100, null);
     }
 
     @Override

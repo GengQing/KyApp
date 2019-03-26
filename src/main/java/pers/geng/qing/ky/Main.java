@@ -19,27 +19,28 @@ public class Main extends Application {
 //        MathFormulaCanvas canvas = new MathFormulaCanvas();
 //        canvas.setId("canvas");
 
-        StackPane stackPane = new StackPane();
-        MathFormulaCanvas canvas = new MathFormulaCanvas();
-        stackPane.getChildren().add(canvas);
+//        StackPane stackPane = new StackPane();
+//        MathFormulaCanvas canvas = new MathFormulaCanvas();
+//        stackPane.getChildren().add(canvas);
         // Bind canvas size to stack pane size.
-        canvas.widthProperty().bind(stackPane.widthProperty());
-        canvas.heightProperty().bind(stackPane.heightProperty());
+//        canvas.widthProperty().bind(stackPane.widthProperty());
+//        canvas.heightProperty().bind(stackPane.heightProperty());
 
-        GridPane.setValignment(stackPane, VPos.CENTER);
-        GridPane.setHalignment(stackPane, HPos.CENTER);
+//        GridPane.setValignment(stackPane, VPos.CENTER);
+//        GridPane.setHalignment(stackPane, HPos.CENTER);
 
-        pane.addRow(1, stackPane);
+//        pane.addRow(1, stackPane);
         System.out.println("the size " + pane.getRowConstraints().size());
 //        GridPane.setHgrow(canvas, Priority.ALWAYS);
 //        GridPane.setVgrow(canvas, Priority.ALWAYS);
 
 //        GridPane.setValignment(canvas, VPos.CENTER);
 //        canvas.widthProperty().bind(pane.widthProperty());
-        canvas.heightProperty().bind(pane.heightProperty());
+//        canvas.heightProperty().bind(pane.heightProperty());
 
 
-        canvas.draw();
+//        canvas.draw();
+
         primaryStage.setTitle("Diligence");
 
 
