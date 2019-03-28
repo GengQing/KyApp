@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.android.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.desktop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.embedded.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.embedded.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.ios.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.ios.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.test.iml" filepath="$PROJECT_DIR$/.idea/modules/pers.geng.qing.ky.KyApp.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KyApp.iml" filepath="$PROJECT_DIR$/KyApp.iml" />
     </modules>
   </component>
 </project>

@@ -26,7 +26,7 @@ public class MathFormulaCanvas extends Canvas {
         this.fxGraphics2D = new FXGraphics2D(getGraphicsContext2D());
 
         // create a formula
-        TeXFormula formula = new TeXFormula("方程$f(x)$的解: \\\\ $$x=\\frac{-b \\pm \\sqrt {b^2-4ac}}{2a}$$");
+        TeXFormula formula = new TeXFormula("FORMULA");
 
         // render the formula to an icon of the same size as the formula.
         this.icon = formula.createTeXIcon(TeXConstants.STYLE_DISPLAY, 30);
