@@ -5,13 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import lombok.val;
+
+import java.net.URL;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        val resource = getClass().getResource("/kyApp.fxml");
+        URL resource = getClass().getResource("/kyApp.fxml");
         GridPane pane = FXMLLoader.load(resource);
 
         primaryStage.setTitle("Diligence");
