@@ -47,7 +47,7 @@ public class FormulaExtractor {
 
         var formulas = allFormulas.get(title);
         if (formulas == null) {
-            formulas = new ArrayList<Formula>();
+            formulas = new ArrayList<>();
             val block = blockMap.get(title);
             for (val str : block.contents) {
                 if (!str.contains("&")) {
@@ -56,6 +56,7 @@ public class FormulaExtractor {
 
                 formulas.addAll(getFormula(str));
             }
+            Collections.shuffle(formulas);
             allFormulas.put(title, formulas);
 
         }
