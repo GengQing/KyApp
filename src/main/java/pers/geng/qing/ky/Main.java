@@ -26,6 +26,7 @@ public class Main extends Application {
         ChoiceBox choiceBox = (ChoiceBox) pane.lookup("#choiceBox");
 
         List<String> list = FormulaExtractor.getInstance().getAlignedBlockNames();
+        list.addAll(MathBlock.EQAULITY_BLOCK);
         choiceBox.setItems(FXCollections.observableArrayList(list));
         choiceBox.setValue(list.get(0));
 

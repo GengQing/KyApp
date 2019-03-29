@@ -45,22 +45,49 @@ public class FormulaExtractor {
 
     public ArrayList<Formula> extractDerivativeByTitle(String title) {
 
-        var formulas = allFormulas.get(title);
+        ArrayList<Formula> formulas = allFormulas.get(title);
         if (formulas == null) {
             formulas = new ArrayList<>();
             val block = blockMap.get(title);
-            for (val str : block.contents) {
-                if (!str.contains("&")) {
-                    continue;
-                }
+            switch (block.type()) {
+                case ALIGNED:
+                    extractAlignedFormula(formulas, block);
+                    break;
+                case EQAULITY:
+                    for (String s : block.contents) {
 
-                formulas.addAll(getFormula(str));
+
+                        int i = s.indexOf("=");
+                        if (i <= 0) {
+                            System.err.println("less 0 " + s);
+                            continue;
+
+                        }
+                        Formula formula = Formula.builder()
+                                .left(s.substring(0, i))
+                                .right(s.substring(i + 1))
+                                .build();
+                        formulas.add(formula);
+                    }
+                    break;
             }
+
+
             Collections.shuffle(formulas);
             allFormulas.put(title, formulas);
 
         }
         return formulas;
+    }
+
+    private void extractAlignedFormula(ArrayList<Formula> formulas, MathBlock block) {
+        for (val str : block.contents) {
+            if (!str.contains("&")) {
+                continue;
+            }
+
+            formulas.addAll(getFormula(str));
+        }
     }
 
 
