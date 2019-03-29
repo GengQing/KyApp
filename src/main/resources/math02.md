@@ -241,7 +241,9 @@ $$
 
 ## 参数方式求导
 
-$$ x=x(t), y=y(t), \frac{dy}{dx}=\frac{y'(t)}{x'(t)}$$
+$$ 
+x=x(t), y=y(t), \frac{dy}{dx}=\frac{y'(t)}{x'(t)}
+$$
 
 ## 积分
 

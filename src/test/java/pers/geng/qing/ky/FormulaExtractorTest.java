@@ -5,17 +5,14 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class FormulaExtractorTest {
 
-    @Test
-    public void extractDerivative() throws Exception {
-        FormulaExtractor extractor = FormulaExtractor.getInstance();
-        val ls = extractor.extractDerivative("## 导数");
-        ls.forEach(System.out::println);
-    }
+
+    private FormulaExtractor instance = FormulaExtractor.getInstance();
 
     @Test
     public void splitMathBlock() throws Exception {
@@ -34,7 +31,24 @@ public class FormulaExtractorTest {
 
     @Test
     public void getAlignedBlockNames() {
-        int i = FormulaExtractor.getInstance().getAlignedBlockNames().size();
-        assertTrue(i>0);
+
+        List<String> alignedBlockNames = instance.getAlignedBlockNames();
+        int i = alignedBlockNames.size();
+        assertTrue(i > 0);
+        System.out.println(i);
+        alignedBlockNames.forEach(System.out::println);
+
+        val jf = instance.getBlockMap().get("## 积分");
+        assertNotNull(jf);
+
+
+    }
+
+    @Test
+    public void countChar() {
+        String s = "=123=abc";
+        int c = instance.countChar(s, "=");
+        assertTrue(c == 2);
+
     }
 }

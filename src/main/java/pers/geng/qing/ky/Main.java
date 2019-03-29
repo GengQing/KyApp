@@ -27,6 +27,7 @@ public class Main extends Application {
 
         List<String> list = FormulaExtractor.getInstance().getAlignedBlockNames();
         choiceBox.setItems(FXCollections.observableArrayList(list));
+        choiceBox.setValue(list.get(0));
 
 
 

@@ -1,6 +1,7 @@
 package pers.geng.qing.ky;
 
 import lombok.val;
+import lombok.var;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -34,6 +35,8 @@ public class FormulaExtractor {
 
     private Map<String, MathBlock> blockMap;
 
+    private Map<String, ArrayList<Formula>> allFormulas = new HashMap<>();
+
     private FormulaExtractor() throws Exception {
         val blocks = this.splitMathBlock();
         blockMap = new HashMap<>();
@@ -41,75 +44,67 @@ public class FormulaExtractor {
     }
 
     public ArrayList<Formula> extractDerivativeByTitle(String title) {
-        val block = blockMap.get(title);
-        val formulas = new ArrayList<Formula>();
-        for (val str : block.contents) {
-            if (!str.startsWith("&")) {
-                continue;
-            }
-            String[] fs = str.split("&");
-            formulas.addAll(getFormula(fs));
-        }
 
-        return formulas;
-    }
-
-
-    public ArrayList<Formula> extractDerivative(String title) throws Exception {
-        val formulas = new ArrayList<Formula>();
-        val list = readAllLines();
-        boolean isStop = false;
-        boolean isBegin = false;
-        for (int i = 0; i < list.size(); i++) {
-            val str = list.get(i);
-            if (str == null || str.isEmpty()) {
-                continue;
-            }
-            if (str.equals(title)) {
-                isStop = true;
-                continue;
-            }
-
-            if (isStop) {
-                if (str.startsWith("$$")) {
-                    isBegin = true;
+        var formulas = allFormulas.get(title);
+        if (formulas == null) {
+            formulas = new ArrayList<Formula>();
+            val block = blockMap.get(title);
+            for (val str : block.contents) {
+                if (!str.contains("&")) {
                     continue;
                 }
 
-                if (str.startsWith("&")) {
-                    String[] fs = str.split("&");
-                    formulas.addAll(getFormula(fs));
-                }
+                formulas.addAll(getFormula(str));
             }
+            allFormulas.put(title, formulas);
 
-            if (isBegin) {
-
-                if (str.startsWith("$$")) {
-                    break;
-                }
-
-            }
         }
-
         return formulas;
-
     }
 
-    public List<Formula> getFormula(String[] fs) {
+
+    public List<Formula> getFormula(String line) {
         val list = new ArrayList<Formula>();
-        for (int i = 0; i < fs.length; i++) {
-            val str = fs[i];
-            if (str.trim().isEmpty()) {
-                continue;
+
+
+        int count = countChar(line, "&");
+        if (count == 1) {
+            Formula formula = createFormula(line, "&=");
+            if (formula != null) list.add(formula);
+        } else {
+            String[] fs = line.split("&");
+            for (int i = 0; i < fs.length; i++) {
+                val str = fs[i];
+                if (str.trim().isEmpty()) {
+                    continue;
+                }
+                Formula formula = createFormula(str, "=");
+                if (formula != null) list.add(formula);
             }
-            String[] strs = str.split("=");
-            Formula formula = Formula.builder()
-                    .left(strs[0])
-                    .right(strs[1])
-                    .build();
-            list.add(formula);
         }
         return list;
+    }
+
+    private Formula createFormula(String str, String regex) {
+        if (!str.contains("=")) {
+            System.err.println("no = " + str);
+            return null;
+        }
+        String[] strs = str.split(regex);
+        return Formula.builder()
+                .left(strs[0])
+                .right(strs[1])
+                .build();
+    }
+
+    public int countChar(String line, String s) {
+        int count = 0;
+        for (char c : line.toCharArray()) {
+            if (c == s.toCharArray()[0]) {
+                count++;
+            }
+        }
+        return count;
     }
 
     private List<String> readAllLines() throws URISyntaxException, IOException {

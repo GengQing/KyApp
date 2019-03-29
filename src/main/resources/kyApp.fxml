@@ -24,6 +24,6 @@
                GridPane.valignment="CENTER"/>
         <MathFormulaCanvas fx:id="canvas" height="279.0" width="552.0" GridPane.halignment="CENTER"
                            GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <ChoiceBox fx:id="choiceBox" prefWidth="150.0"/>
+        <ChoiceBox fx:id="choiceBox" prefWidth="150.0" onAction="#changeTitle"/>
     </children>
 </GridPane>

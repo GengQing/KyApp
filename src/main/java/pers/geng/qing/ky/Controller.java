@@ -3,14 +3,14 @@ package pers.geng.qing.ky;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import lombok.val;
 
 import java.util.List;
 
 public class Controller {
 
-    int index = 0;
 
-    int turn = 0;
+    FormulaExtractor formulaExtractor;
 
     @FXML
     private Label label;
@@ -21,9 +21,6 @@ public class Controller {
     @FXML
     MathFormulaCanvas canvas;
 
-    List<Formula> formulas;
-
-    Formula formula;
 
     public Controller() throws Exception {
 
@@ -31,20 +28,26 @@ public class Controller {
 
     }
 
-    FormulaExtractor formulaExtractor;
+    int index = 0;
+
+    int turn = 0;
+
+
+    Formula formula;
 
     @FXML
-    public void showKnowledge() throws Exception {
+    public void changeTitle() {
+        index = 0;
+        turn = 0;
+        label.setText(choiceBox.getValue());
 
-        String title = choiceBox.getValue();
+    }
 
-        label.setText(title);
+    @FXML
+    public void showKnowledge() {
 
 
-        if (formulas == null) {
-
-            formulas = formulaExtractor.extractDerivativeByTitle(title);
-        }
+        val formulas = formulaExtractor.extractDerivativeByTitle(choiceBox.getValue());
 
         if (turn % 2 == 0) {
             formula = formulas.get(index);
@@ -53,7 +56,6 @@ public class Controller {
         } else {
             canvas.drawFormula(formula.getLeft() + " = " + formula.getRight(), 20);
         }
-
 
         turn++;
 
