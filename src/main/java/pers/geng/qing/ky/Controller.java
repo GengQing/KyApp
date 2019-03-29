@@ -46,8 +46,11 @@ public class Controller {
     @FXML
     public void showKnowledge() {
 
-
         val formulas = formulaExtractor.extractDerivativeByTitle(choiceBox.getValue());
+        if (index == formulas.size()) {
+            canvas.drawFormula("End", 20);
+            return;
+        }
 
         if (turn % 2 == 0) {
             formula = formulas.get(index);

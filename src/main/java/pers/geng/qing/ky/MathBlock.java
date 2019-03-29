@@ -28,22 +28,22 @@ public class MathBlock {
 
     public Type type() {
 
+        if (type != null) {
+            return type;
+        }
+
         if (EQAULITY_BLOCK.contains(title)) {
             return Type.EQAULITY;
         }
 
-        if (type == null) {
-            for (val str : this.getContents()) {
-                if (str.contains("aligned")) {
-                    type = Type.ALIGNED;
-                    return type;
-                }
+        for (val str : this.getContents()) {
+            if (str.contains("aligned")) {
+                type = Type.ALIGNED;
+                return type;
             }
-
         }
 
-        type = Type.NORMAL;
-        return type;
+        return Type.NORMAL;
     }
 
 }

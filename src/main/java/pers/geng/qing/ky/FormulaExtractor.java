@@ -49,14 +49,13 @@ public class FormulaExtractor {
         if (formulas == null) {
             formulas = new ArrayList<>();
             val block = blockMap.get(title);
-            switch (block.type()) {
+            Type type = block.type();
+            switch (type) {
                 case ALIGNED:
                     extractAlignedFormula(formulas, block);
                     break;
                 case EQAULITY:
                     for (String s : block.contents) {
-
-
                         int i = s.indexOf("=");
                         if (i <= 0) {
                             System.err.println("less 0 " + s);
@@ -80,7 +79,7 @@ public class FormulaExtractor {
         return formulas;
     }
 
-    private void extractAlignedFormula(ArrayList<Formula> formulas, MathBlock block) {
+    private void extractAlignedFormula(final ArrayList<Formula> formulas, MathBlock block) {
         for (val str : block.contents) {
             if (!str.contains("&")) {
                 continue;
@@ -95,8 +94,7 @@ public class FormulaExtractor {
         val list = new ArrayList<Formula>();
 
 
-        int count = countChar(line, "&");
-        if (count == 1) {
+        if (line.contains("&=")) {
             Formula formula = createFormula(line, "&=");
             if (formula != null) list.add(formula);
         } else {
@@ -114,8 +112,8 @@ public class FormulaExtractor {
     }
 
     private Formula createFormula(String str, String regex) {
-        if (!str.contains("=")) {
-            System.err.println("no = " + str);
+        if (!str.contains(regex)) {
+            System.err.println("no '" + str + "' sp=" + regex);
             return null;
         }
         String[] strs = str.split(regex);

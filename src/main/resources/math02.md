@@ -269,7 +269,7 @@ $$
 \int \cos^2 x dx = \frac12 x+ \frac14 \sin 2x +C
 $$
 
-##### 当n为奇数，乘以1；n为偶数，乘以$\pi/2$
+##### 正余弦积分，当n为奇数，乘以1；n为偶数，乘以$\pi/2$
 $$
 \int_0^{\frac \pi 2} \sin^nxdx=\int_0^{\frac \pi 2}\cos^nxdx=\frac {(n-1)!!} {n!!} *(\frac \pi2 \| 1)\\
 
@@ -441,7 +441,7 @@ f(x)=ax^2+bx+c, y^*=x^k(cx^2+dx+f),k=0,1,2
 $$  
 
 $$
-f(x)=e^{ax},y^*=cx^ke^{ax},k=0,1,2
+f(x)=e^{ax},y^*=cx^ke^{ax},k=0,1,2\int \frac 1 x dx=\ln |x| +C
 $$
 
 $$
