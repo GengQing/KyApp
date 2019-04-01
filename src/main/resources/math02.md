@@ -269,12 +269,13 @@ $$
 \int \cos^2 x dx = \frac12 x+ \frac14 \sin 2x +C
 $$
 
-##### 正余弦积分，当n为奇数，乘以1；n为偶数，乘以$\pi/2$
+##### 华里士公式
 $$
+当n为奇数，乘以1；n为偶数，乘以pi/:2  \\
 \int_0^{\frac \pi 2} \sin^nxdx=\int_0^{\frac \pi 2}\cos^nxdx=\frac {(n-1)!!} {n!!} *(\frac \pi2 \| 1)\\
-
+\  \\
 \int_0^{\frac \pi 2} f(\sin x)dx=\int_0^{\frac \pi 2}f(\cos x)dx\\
-
+\  \\
 \int_0^{\pi} xf(\sin x)dx = \frac{\pi}{2} \int_0^{\pi} f(\sin x)dx
 $$
 
@@ -290,19 +291,13 @@ $$
 \int_0^x f(x-t)dt = \int_0^x f(t)dt
 $$
 
-## 反常积分收敛
+## 反常积分收敛冲要条件
 
 $$
-\int_a^{+\infty} \frac 1 {x^p}dx <=> p>1,a>0
-$$
-$$
-\int_a^{+\infty} \frac 1{x\ln^p x}dx <=> p>1, a>1
-$$
-$$
-\int_a^b \frac 1{(x-a)^p}dx<=> p<1
-$$
-$$
-\int_a^{+\infty}x^ke^{-\lambda x}dx <=> \lambda>0,k>0
+\int_a^{+\infty} \frac 1 {x^p}dx \Leftrightarrow p>1,a>0 \\
+\int_a^{+\infty} \frac 1{x\ln^p x}dx \Leftrightarrow p>1, a>1 \\
+\int_a^b \frac 1{(x-a)^p}dx \Leftrightarrow p<1 \\
+\int_a^{+\infty}x^ke^{-\lambda x}dx \Leftrightarrow \lambda>0,k>0 \\
 $$
 
 ## 积分应用
