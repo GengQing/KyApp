@@ -47,7 +47,8 @@ public class Controller {
     public void showKnowledge() {
 
         val formulas = formulaExtractor.extractDerivativeByTitle(choiceBox.getValue());
-        if (index == formulas.size()) {
+
+        if (turn == 2 * formulas.size()) {
             canvas.drawFormula("End", 20);
             return;
         }
