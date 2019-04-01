@@ -7,23 +7,18 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import pers.geng.qing.ky.MathFormulaCanvas?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-          prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="pers.geng.qing.ky.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pers.geng.qing.ky.Controller">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES"/>
-        <RowConstraints maxHeight="295.0" minHeight="10.0" prefHeight="212.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="295.0" minHeight="10.0" prefHeight="265.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#showKnowledge"
-               onTouchMoved="#showKnowledge" text="点击我" GridPane.halignment="CENTER" GridPane.rowIndex="1"
-               GridPane.valignment="CENTER"/>
-        <MathFormulaCanvas fx:id="canvas" height="279.0" width="552.0" GridPane.halignment="CENTER"
-                           GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-        <ChoiceBox fx:id="choiceBox" prefWidth="150.0" onAction="#changeTitle"/>
+        <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#showKnowledge" onTouchMoved="#showKnowledge" text="点击我" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <MathFormulaCanvas fx:id="canvas" height="199.0" width="459.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <ChoiceBox fx:id="choiceBox" onAction="#changeTitle" prefWidth="150.0" />
     </children>
 </GridPane>

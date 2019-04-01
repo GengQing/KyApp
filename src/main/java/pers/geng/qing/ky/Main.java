@@ -9,11 +9,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.List;
 
 public class Main extends Application {
-
-
 
 
     @Override
@@ -21,20 +20,18 @@ public class Main extends Application {
         URL resource = getClass().getResource("/kyApp.fxml");
         GridPane pane = FXMLLoader.load(resource);
 
-        primaryStage.setTitle("Diligence");
+        primaryStage.setTitle("MathFormula");
 
         ChoiceBox choiceBox = (ChoiceBox) pane.lookup("#choiceBox");
 
         List<String> list = FormulaExtractor.getInstance().getAlignedBlockNames();
         list.addAll(MathBlock.EQAULITY_BLOCK);
+        Collections.shuffle(list);
         choiceBox.setItems(FXCollections.observableArrayList(list));
         choiceBox.setValue(list.get(0));
 
 
-
-        primaryStage.setScene(new Scene(pane, 600, 400));
-
-
+        primaryStage.setScene(new Scene(pane, 460, 390));
 
 
         primaryStage.show();

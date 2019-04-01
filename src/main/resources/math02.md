@@ -268,10 +268,9 @@ $$
 
 \int \cos^2 x dx = \frac12 x+ \frac14 \sin 2x +C
 $$
-
 ##### 华里士公式
 $$
-当n为奇数，乘以1；n为偶数，乘以pi/:2  \\
+当n为奇数，乘以1；n为偶数，乘以\frac \pi2  \\
 \int_0^{\frac \pi 2} \sin^nxdx=\int_0^{\frac \pi 2}\cos^nxdx=\frac {(n-1)!!} {n!!} *(\frac \pi2 \| 1)\\
 \  \\
 \int_0^{\frac \pi 2} f(\sin x)dx=\int_0^{\frac \pi 2}f(\cos x)dx\\
@@ -424,6 +423,7 @@ $$
 $$
 \iint f(x,y)dx=\iint f(y,x)dxdy, 
 $$
+
 
 ### 二阶常系数线性齐次微分方程
     1. 方程及特征方程
