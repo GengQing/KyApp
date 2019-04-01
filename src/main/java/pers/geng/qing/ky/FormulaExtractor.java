@@ -1,7 +1,6 @@
 package pers.geng.qing.ky;
 
 import lombok.val;
-import lombok.var;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -152,7 +151,7 @@ public class FormulaExtractor {
 
         for (int i = 0; i < lines.size(); i++) {
             val line = lines.get(i);
-            if (!started && isMathBlockCharaters(line)) {
+            if (!started && isMathBlockCharacters(line)) {
                 started = true;
                 blockBuilder = MathBlock.builder();
                 blockBuilder.startLineNo(i);
@@ -164,7 +163,7 @@ public class FormulaExtractor {
                 blockBuilder.add(line);
             }
 
-            if (started && isMathBlockCharaters(line)) {
+            if (started && isMathBlockCharacters(line)) {
                 blockBuilder.endLineNo(i);
                 MathBlock block = blockBuilder.build();
                 allBlocks.add(block);
@@ -190,7 +189,7 @@ public class FormulaExtractor {
         return !Objects.isNull(title) && !title.trim().isEmpty();
     }
 
-    private boolean isMathBlockCharaters(String line) {
+    private boolean isMathBlockCharacters(String line) {
         return line.trim().contains("$$");
     }
 
