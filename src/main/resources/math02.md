@@ -167,7 +167,7 @@ $$
 
 1-\cos x  \sim  \frac {x^2} 2\\
 
-1-\sec x=1-\frac 1{\cos x} \sim -\frac {x^2}2\\
+\sec x - 1 =\frac 1{\cos x} -1 \sim \frac {x^2}2\\
 
 e^x-1 \sim x, a^x-1 \sim x\ln a \\
 
@@ -300,7 +300,8 @@ $$
 ## 积分应用
 ### 弧微分与极坐标转换成参数方程
 $$
-ds=\sqrt{1+f'^2(x)}dx,ds=\sqrt{x'^2(t)+y'^2(t)}dt \\
+ds=\sqrt{1+f'^2(x)}dx,\\
+ds=\sqrt{x'^2(t)+y'^2(t)}dt \\
 
 r=r(\theta),x=r(\theta)\cos\theta,y=r(\theta)\sin\theta, \\
 ds=\sqrt{r^2(\theta)+r'^2(\theta)}d\theta
@@ -314,7 +315,7 @@ $$
 
     2. f(x)绕y轴旋转体积
 $$
-V=2\pi\int_a^b x|f(x)|dx
+V=2\pi\int_a^b x|f(x)|dx\\
 
 V=\pi \int_a^b f^2(y)dy
 $$
@@ -344,7 +345,7 @@ $$
 
 ### 弧长
 
-    1. 弧长方程
+    1. 弧长公式
 $$
 L=\int_a^b\sqrt{1+f'(x)^2}dx
 $$
@@ -355,7 +356,7 @@ S=\int_{t_1}^{t_2}\sqrt{x'^2(t)+y'^2(t)}dt
 $$
     3. 弧长极坐标函数转化成参数方程
 $$
-x=r(\theta) \cos \theta,y=r(\theta) \sin \theta
+x=r(\theta) \cos \theta,y=r(\theta) \sin \theta\\
 
 s=\int_{\theta_1}^{\theta_2}
 \sqrt{r^2(\theta)+r'^2(\theta)}d\theta
@@ -369,9 +370,9 @@ $$
 
     1. 平面面积:极坐标，二重积分化极坐标,交换积分次数得
 $$
-\iint dxdy=\iint rdrd\theta=\frac 12 \int_{\theta1}^{\theta2}[r(\theta)]^2d\theta
+S=\iint dxdy=\iint rdrd\theta=\frac 12 \int_{\theta1}^{\theta2}[r(\theta)]^2d\theta
 $$
-    2. 平面慢慢:参数方程，换元积分
+    2. 平面面积:参数方程，换元积分
 $$
 S=\int_{t1}^{t2}y(t)x'(t)dt
 $$
@@ -385,7 +386,7 @@ $$
 
 ### 积分性质
 
-- 积分区间观原点对称性质
+- 一重积分区间原点对称性质
 
 $$
  \int_{-a}^{a}f(x)dx=
@@ -394,7 +395,10 @@ $$
 0,f(-x)=-f(x)\\
 \end{cases}
 \ \\
+$$
+* 二重积分区间原点对称性质
 
+$$
 \iint f(x)dxdy=
 \begin{cases}
 2\iint f(x)dxdy, \in D_1, 
@@ -403,7 +407,7 @@ f(-x,-y)=f(x,y)\\
 \end{cases}
 $$
 
-- 积分区间关于y轴对称性质
+- 二重积分区间关于y轴对称性质
 
 $$
 \iint f(x,y)dxdy=
@@ -413,7 +417,7 @@ $$
 \end{cases}
 $$
 
-- 积分区间关于x轴对称性质
+- 二重积分区间关于x轴对称性质
 
 $$
 \iint f(x,y)dxy=
@@ -424,7 +428,7 @@ $$
 
 $$
 
-- 积分区间关于y=x对称, D11第一象限上半部分
+- 二重积分区间关于y=x对称, D11第一象限上半部分
 
 $$
 \iint f(x,y)dx=\iint f(y,x)dxdy, 
@@ -439,22 +443,25 @@ y''+py+q=f(x), \lambda^2+p\lambda+q=0,
 $$
     2. 二阶常系数线性非齐次方式特解,待定系数法
 $$
-f(x)=ax^2+bx+c, 特解:y^*=x^k(cx^2+dx+f),
+f(x)=ax^2+bx+c, 特解:y^*=x^k(cx^2+dx+f),\\
 k=\begin{cases}
 0, 0不是特征根\\
 1, 0是单根\\
 2, 0是二重根
-\end{cases}
+\end{cases}\\
 \ \\
-f(x)=e^{ax},y^*=cx^ke^{ax}
+f(x)=e^{ax},y^*=Cx^ke^{ax},
 k=\begin{cases}
 0, a不是特征根\\
 1, a是单根\\
 2, a是二重根
-\end{cases}
+\end{cases}\\
+\ \\
 
-f(x)=e^{ax}(bx+c),y^*=x^ke^{ax}(dx+e),k同上 \\
-f(x)=e^{ax}(H_{n1}(x)\cos bx+L_{n2}(x)\sin bx), y^*=x^ke^{ax}(M_n(x)\cos {bx}+F_n(x)\sin bx), n=max(n1,n2)\\
+f(x)=e^{ax}(bx+c),y^*=x^ke^{ax}(Dx+C),k同上 \\
+\ \\
+f(x)=e^{ax}(H_{n1}(x)\cos bx+L_{n2}(x)\sin bx),\\
+ y^*=x^ke^{ax}(M_n(x)\cos {bx}+F_n(x)\sin bx), n=max(n1,n2)\\
 k=\begin{cases}
 0, a\pm ib不是特征根\\
 1, a\pm ib 是特种根\\
@@ -489,11 +496,11 @@ $$
     4. 可降阶的高阶微方程
 $$
 
-1. \ y^{(n)} = f(x)
+y^{(n)} = f(x) \\
 
-\Rightarrow y^{(n-1)} = \int f(x) dx +C_1
+\Rightarrow y^{(n-1)} = \int f(x) dx +C_1 \\
 
-\Rightarrow y^{(n-2)} = \int [\int f(x) dx +C_1]dx + C_2
+\Rightarrow y^{(n-2)} = \int [\int f(x) dx +C_1]dx + C_2 \\
 
 \Rightarrow \cdots
 
