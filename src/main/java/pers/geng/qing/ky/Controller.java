@@ -60,12 +60,23 @@ public class Controller {
             });
             Collections.shuffle(mathBlocks);
         }
+
         if (index < mathBlocks.size()) {
 
-            MathBlock mathBlock = mathBlocks.get(index);
-            label.setText(mathBlock.getTitle());
-            canvas.drawFormula(Arrays.toString(mathBlock.getContents().toArray()), 15);
-            index++;
+            if (turn % 2 == 0) {
+                MathBlock mathBlock = mathBlocks.get(index);
+                label.setText(mathBlock.getTitle());
+                canvas.drawFormula("click", 20);
+            } else {
+                MathBlock mathBlock = mathBlocks.get(index);
+                label.setText(mathBlock.getTitle());
+                canvas.drawFormula(Arrays.toString(mathBlock.getContents().toArray()), 15);
+                index++;
+            }
+            turn++;
+
+        } else {
+            canvas.drawFormula("End", 20);
         }
 
     }
