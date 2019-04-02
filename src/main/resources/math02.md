@@ -423,32 +423,42 @@ $$
 \end{cases}
 
 $$
-- 积分区间关于y=x, D11第一象限上半部分
+
+- 积分区间关于y=x对称, D11第一象限上半部分
+
 $$
 \iint f(x,y)dx=\iint f(y,x)dxdy, 
 $$
 
 
-### 二阶常系数线性齐次微分方程
-    1. 方程及特征方程
+### 二阶常系数线性微分方程
+
+    1. 二阶常系数线性齐次微分方程及特征方程
 $$
 y''+py+q=f(x), \lambda^2+p\lambda+q=0,
 $$
-    2. 特解，带入方程求系数
+    2. 二阶常系数线性非齐次方式特解,待定系数法
 $$
-f(x)=ax^2+bx+c, y^*=x^k(cx^2+dx+f),k=0,1,2
-$$  
+f(x)=ax^2+bx+c, 特解:y^*=x^k(cx^2+dx+f),
+k=\begin{cases}
+0, 0不是特征根\\
+1, 0是单根\\
+2, 0是二重根
+\end{cases}
+\ \\
+f(x)=e^{ax},y^*=cx^ke^{ax}
+k=\begin{cases}
+0, a不是特征根\\
+1, a是单根\\
+2, a是二重根
+\end{cases}
 
-$$
-f(x)=e^{ax},y^*=cx^ke^{ax},k=0,1,2\int \frac 1 x dx=\ln |x| +C
-$$
-
-$$
-f(x)=e^{ax}(bx+c),y^*=x^ke^{ax}(dx+e),k=0,1,2
-$$
-$$
-f(x)=e^{ax}(H_{n1}(x)\cos bx+L_{n2}(x)\sin bx),
-y^*=x^ke^{ax}(M_n(x)\cos {bx}+F_n(x)\sin bx), n=max(n1,n2),k=0,1
+f(x)=e^{ax}(bx+c),y^*=x^ke^{ax}(dx+e),k同上 \\
+f(x)=e^{ax}(H_{n1}(x)\cos bx+L_{n2}(x)\sin bx), y^*=x^ke^{ax}(M_n(x)\cos {bx}+F_n(x)\sin bx), n=max(n1,n2)\\
+k=\begin{cases}
+0, a\pm ib不是特征根\\
+1, a\pm ib 是特种根\\
+\end{cases}
 $$
 ### 一阶微分方程
 
