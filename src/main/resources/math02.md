@@ -34,6 +34,7 @@ $$
 - $\cos x \ge 0, x\in[0,\pi/2] ,[\frac{3\pi}{2},2\pi]$, 即一和四象限为正值, 二三象限为负值
 
 总结: 正弦余弦象限先横再竖为正, 正弦上半轴,余弦右半轴为正
+
 - 特殊三角函数值
 
 $$
@@ -96,6 +97,7 @@ a>b>0 \Rightarrow \frac1a<\frac1b\\
 
 a<b<0 \Rightarrow \frac1a>\frac1b
 $$
+
 * 幂函数:
 
 $$
@@ -121,12 +123,12 @@ $$
 $$
 y=\arcsin x, x \in [-1,1], y \in[-\frac \pi 2, \frac\pi 2]
 $$
-## 基本公式
+## 基本初等函数公式
 $$
 \log_a x = \frac {\ln x} {\ln a}
 $$
 
-## 周期函数
+## 三角函数的周期
 $$
 
 f(x)=A\sin(Bx+C)+D, T=\frac {2\pi} B
@@ -167,18 +169,11 @@ $$
 
 1-\sec x=1-\frac 1{\cos x} \sim -\frac {x^2}2\\
 
-$$
+e^x-1 \sim x, a^x-1 \sim x\ln a \\
 
-$$
-e^x-1 \sim x, a^x-1 \sim x\ln a
-$$
+\ln (1+x) \sim x, \log_a (1+x) \sim \frac x{\ln a}\\
 
-$$
-\ln (1+x) \sim x, \log_a (1+x) \sim \frac x{\ln a}
-$$
-
-$$
-\sqrt {1+x}-1 \sim \frac x2, (1+x)^a-1 \sim ax
+\sqrt {1+x}-1 \sim \frac x2, (1+x)^a-1 \sim ax\\
 $$
 
 ## 导数
@@ -215,7 +210,8 @@ $$
 ## 幂指函数导数
 
 $$
-[u^v]'=u^v(u'\frac{v}{u}+v'\ln u)$$
+[u^v]'=u^v(u'\frac{v}{u}+v'\ln u)
+$$
 
 
 ## 高阶导数
@@ -230,7 +226,9 @@ $$
 (\frac{1}{1+x})^{(n)} = \frac{(-1)^n n!}{(1+x)^{n+1}}\\
 
 $$
+
 ##### 一阶导数只包含y,求二阶导数
+
 $$
 \frac {dy}{dx} =f(y)\\
 
@@ -302,12 +300,12 @@ $$
 ## 积分应用
 ### 弧微分与极坐标转换成参数方程
 $$
-ds=\sqrt{1+f'^2(x)}dx,ds=\sqrt{x'^2(t)+y'^2(t)}dt
-$$
-$$
-r=r(\theta),x=r(\theta)\cos\theta,y=r(\theta)\sin\theta,
+ds=\sqrt{1+f'^2(x)}dx,ds=\sqrt{x'^2(t)+y'^2(t)}dt \\
+
+r=r(\theta),x=r(\theta)\cos\theta,y=r(\theta)\sin\theta, \\
 ds=\sqrt{r^2(\theta)+r'^2(\theta)}d\theta
 $$
+
 ### 旋转体积
     1. f(x)绕x轴旋转体积
 $$
@@ -321,57 +319,59 @@ V=2\pi\int_a^b x|f(x)|dx
 V=\pi \int_a^b f^2(y)dy
 $$
 
-    3. 截面面积已知的体积
-    关键是寻找恰当的截面面积公式
+    3. 截面面积已知的体积(关键是寻找恰当的截面面积公式)
 $$
 V= \int_a^b f(x) dx
 $$
 
 ### f(x)绕x轴旋转体侧面积
 
-    1. 直角坐标
+    1. x轴直角坐标侧面积
     
 $$
 S=2\pi\int_a^bf(x)\sqrt{1+f'^2(x)}dx
 $$
-    2. 参数方程
+    2. x轴参数方程侧面积
 $$
 S=2\pi\int_{t1}^{t2}y(t)\sqrt{x'^2(t)+y'^2(t)}dt
 , x=x(t),y=y(t)
 $$
 
-    3. 极坐标可以转化成参数方程
+    3. 侧面积:极坐标可以转化成参数方程
 $$
 S=2\pi\int_a^b r(\theta)\sin\theta\sqrt{r^2(\theta)+r'^2(\theta)}d\theta
 $$
 
 ### 弧长
 
-    1. 参数方程
+    1. 弧长方程
 $$
 L=\int_a^b\sqrt{1+f'(x)^2}dx
 $$
-    2. 参数方程
+    2. 弧长参数方程
 $$
 S=\int_{t_1}^{t_2}\sqrt{x'^2(t)+y'^2(t)}dt
 , x=x(t),y=y(t)
 $$
-    3. 极坐标函数转化成参数方程
+    3. 弧长极坐标函数转化成参数方程
 $$
 x=r(\theta) \cos \theta,y=r(\theta) \sin \theta
 
 s=\int_{\theta_1}^{\theta_2}
 \sqrt{r^2(\theta)+r'^2(\theta)}d\theta
 $$
-### 平面面积 ，x轴时g(x)=0
+
+### 平面面积
+
 $$
 S=\int_a^b|f(x)-g(x)|dx, 
 $$
-    1. 极坐标，二重积分化极坐标,交换积分次数得另一个
+
+    1. 平面面积:极坐标，二重积分化极坐标,交换积分次数得
 $$
 \iint dxdy=\iint rdrd\theta=\frac 12 \int_{\theta1}^{\theta2}[r(\theta)]^2d\theta
 $$
-    2. 参数方程，换元积分
+    2. 平面慢慢:参数方程，换元积分
 $$
 S=\int_{t1}^{t2}y(t)x'(t)dt
 $$
@@ -382,8 +382,10 @@ $$
 $$
 avg=\frac 1 {(b-a)}\int_a^bf(x)dx
 $$
+
 ### 积分性质
-- 积分区间观原点对称
+
+- 积分区间观原点对称性质
 
 $$
  \int_{-a}^{a}f(x)dx=
@@ -391,8 +393,8 @@ $$
 2\int_0^af(x)dx,f(-x)=f(x)\\
 0,f(-x)=-f(x)\\
 \end{cases}
-$$
-$$
+\ \\
+
 \iint f(x)dxdy=
 \begin{cases}
 2\iint f(x)dxdy, \in D_1, 
@@ -400,7 +402,8 @@ f(-x,-y)=f(x,y)\\
 0, f(-x,-y)=-f(x,y)
 \end{cases}
 $$
-- 积分区间关于y轴对称
+
+- 积分区间关于y轴对称性质
 
 $$
 \iint f(x,y)dxdy=
@@ -409,7 +412,8 @@ $$
 0,f(-x,y)=-f(x,y)
 \end{cases}
 $$
-- 积分区间关于x轴对称
+
+- 积分区间关于x轴对称性质
 
 $$
 \iint f(x,y)dxy=
@@ -419,7 +423,7 @@ $$
 \end{cases}
 
 $$
-- 积分区间关于y=x, D11 上半部分
+- 积分区间关于y=x, D11第一象限上半部分
 $$
 \iint f(x,y)dx=\iint f(y,x)dxdy, 
 $$
