@@ -26,6 +26,7 @@ public class Main extends Application {
 
         List<String> list = FormulaExtractor.getInstance().getAlignedBlockNames();
         list.addAll(MathBlock.EQAULITY_BLOCK);
+        list.add(FormulaExtractor.BLOCK);
         Collections.shuffle(list);
         choiceBox.setItems(FXCollections.observableArrayList(list));
         choiceBox.setValue(list.get(0));

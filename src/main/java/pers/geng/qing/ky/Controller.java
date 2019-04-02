@@ -5,6 +5,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import lombok.val;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Controller {
@@ -22,7 +25,7 @@ public class Controller {
     MathFormulaCanvas canvas;
 
 
-    public Controller() throws Exception {
+    public Controller() {
 
         formulaExtractor = FormulaExtractor.getInstance();
 
@@ -40,12 +43,45 @@ public class Controller {
         index = 0;
         turn = 0;
         label.setText(choiceBox.getValue());
+        mathBlocks = null;
+
+    }
+
+    List<MathBlock> mathBlocks;
+
+    public void showBlock() {
+
+        if (mathBlocks == null) {
+            mathBlocks = new ArrayList<>();
+            formulaExtractor.getBlockMap().forEach((s, mathBlock) -> {
+                if (!choiceBox.getItems().contains(s)) {
+                    mathBlocks.add(mathBlock);
+                }
+            });
+            Collections.shuffle(mathBlocks);
+        }
+        if (index < mathBlocks.size()) {
+
+            MathBlock mathBlock = mathBlocks.get(index);
+            label.setText(mathBlock.getTitle());
+            canvas.drawFormula(Arrays.toString(mathBlock.getContents().toArray()), 15);
+            index++;
+        }
 
     }
 
     @FXML
     public void showKnowledge() {
 
+        if (choiceBox.getValue().equals(FormulaExtractor.BLOCK)) {
+            showBlock();
+        } else {
+            showFormula();
+        }
+
+    }
+
+    private void showFormula() {
         val formulas = formulaExtractor.extractDerivativeByTitle(choiceBox.getValue());
 
         if (turn == 2 * formulas.size()) {
@@ -62,6 +98,5 @@ public class Controller {
         }
 
         turn++;
-
     }
 }

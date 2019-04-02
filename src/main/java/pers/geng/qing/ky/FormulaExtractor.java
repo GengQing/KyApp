@@ -14,6 +14,7 @@ import java.util.*;
  **/
 public class FormulaExtractor {
 
+    public static final String BLOCK = "BLOCK";
 
     private static FormulaExtractor formulaExtractor;
 
