@@ -330,11 +330,11 @@ $$
     1. x轴直角坐标侧面积
     
 $$
-S=2\pi\int_a^bf(x)\sqrt{1+f'^2(x)}dx
+S=2\pi\int_a^b|f(x)|\sqrt{1+f'^2(x)}dx
 $$
     2. x轴参数方程侧面积
 $$
-S=2\pi\int_{t1}^{t2}y(t)\sqrt{x'^2(t)+y'^2(t)}dt
+S=2\pi\int_{t1}^{t2}|y(t)|\sqrt{x'^2(t)+y'^2(t)}dt
 , x=x(t),y=y(t)
 $$
 
